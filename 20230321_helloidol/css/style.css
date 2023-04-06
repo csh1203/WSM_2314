@@ -16,3 +16,51 @@ h1,
 h2{
     background-color: plum;
 }
+
+h5 ~ h6,
+ol,
+ul { /*사실 ul > li임*/
+    color: #333;
+    font-size: 32px; /*시험 -> font-color X, size X*/
+}
+
+.korea{
+    color : skyblue;
+}
+
+.japan,
+.canada{
+    color :crimson;
+}
+
+.incheon{ /*incheon을 나중에 적용해서 '철' 색은 darkblue가 됨*/
+    color :darkblue;
+}
+
+.leader{
+    color: purple;
+}
+
+li:nth-child(5){ /*li의 다섯번째 멤버에게 밑줄*/
+    text-decoration: underline;
+}
+
+li:nth-child(even){ /*짝수행 background-color를 #eee로 지정 / odd : 홀수, even : 짝수*/
+    background-color: #eee;
+} /*li:nth-child(2n)으로 해도 짝수로 지정 가능*/
+
+li:nth-child(5n){ /*5의 배수의 background-color를 #aaa로 지정*/
+    background-color: #aaa;
+}
+
+[type="text"]{
+    background-color: aqua;
+}
+
+ul:nth-child(3) > li:nth-child(2) : :hover{ /*ul이 아니어도 셈. -> h1부터 세는 것. -> 두 번째 ul은 3으로 지정해야 함*/
+    text-decoration: overline;
+}
+
+body > div:nth-child(8) > ul:nth-child(3) > li:nth-child(2){
+    font-size: 8px;
+}
