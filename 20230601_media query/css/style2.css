@@ -15,7 +15,7 @@ body{
 /* desktop */
 @media screen and (min-width: 720px){
     body{
-        background-color: crimson;
+        background-color: green;
     }
 }
 

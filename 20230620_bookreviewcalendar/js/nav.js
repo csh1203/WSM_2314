@@ -14,7 +14,6 @@ nav_toggle.onclick = () => {
     navListUl.classList.toggle("show-menu");
 }
 
-
 // HTML -> JS
 // 1. id
 //  const navToggleDiv = document.getElementById("nav-toggle");

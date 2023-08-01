@@ -3,26 +3,28 @@ body {
 }
 /* h1의 자매인 모든 h2에 plum 배경색 */
 h1 ~ h2{
-    background-color: plum;
+    background-color: orange;
 }
 
 /* h1의 자매 중 첫 번째 h2만 plum배경색 */
 h1 + h2{ /*h1 + h3 -> h3는 h1의 첫 번째 자매가 아니기 때문에 선택 안 됨*/
-    background-color: plum;
+    background-color: green;
 }
 
 /* h1과 h2는 plum 배경색 */
-h1,
+/* h1,
 h2{
     background-color: plum;
-}
+} */
 
 h5 ~ h6,
 ol,
 ul { /*사실 ul > li임*/
     color: #333;
-    font-size: 32px; /*시험 -> font-color X, size X*/
+    font-size: 32px; /* 시험 -> font-color X, size X*/
 }
+
+
 
 .korea{
     color : skyblue;

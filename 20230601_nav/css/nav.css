@@ -7,6 +7,7 @@
     --first-color : #008156;
     --second-color : #efb11c;
     --body-color : #fff;
+    
 
     /* font */
     --body-font : "Hahmlet", serif;
@@ -64,7 +65,7 @@ nav {
 
 .nav-toggle {
     font-size : var(--h2-font-size);
-    visibility : hidden;
+    visibility :hidden;
 }
 
 /* tablet */
@@ -100,7 +101,7 @@ nav {
     }
 
     .nav-link {
-        display: block; /* link를 양옆으로 넓게 */
+        display: block;  /*link를 양옆으로 넓게*/
     }
 
     .nav-toggle { /* .nav-toggle 보이게 */
