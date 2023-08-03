@@ -36,8 +36,75 @@
       </nav>
     </header>
 
+    <!-- 약어 : 1. content1, content2, content3만들기, 2. title아래에 subject와 detail만들기-->
+    <!-- .content$*3-->
+    <!-- .title>.subject+.detail-->
+
+    <!--여러 개의 클래스를 넣을 때 , + 이런거 아니고 띄어쓰기 ex) class="title label" title클래스와 label클래스
+    만들 땐 .title.label (.title label 아님)-->
+
     <main id="review">
-      
+      <div class="image-info-groups container">
+        <div class="book-image">
+          이미지 (.book-image)
+        </div>
+        <div class="info-groups container">
+          <div class="info-group container">
+            <div class="info container">
+              <div class="title label">
+                제목 (.title.label)
+              </div>
+              <div class="title">
+                세이노의 가르침 (.title)
+              </div>
+            </div>
+            <div class="info container">
+              <div class="author label">
+                저자 (.author.label)
+              </div>
+              <div class="author">
+                세이노 (.author)
+              </div>
+            </div>
+          </div>
+          <div class="info-group container">
+            <div class="info container">
+              <div class="publisher label">
+                출판사 (.publisher.label)
+              </div>
+              <div class="publisher">
+                세이노출판사 (.publisher)
+              </div>
+            </div>
+            <div class="info container">
+              <div class="read-data label">
+                읽은 날짜 (.read-data.label)
+              </div>
+              <div class="read-data">
+                2023.08.03 (.read-data)
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="reviews container">
+        <div class="review container">
+          <div class="synopsis label">
+            줄거리 (.synopsis.label)
+          </div>
+          <div class="synopsis">
+            세이노가 귀요미다 (.synopsis)
+          </div>
+        </div>
+        <div class="review container">
+          <div class="phrase label">
+            마음에 드는 구절 (.phrase.label)
+          </div>
+          <div class="phrase">
+            "나는 기요미 세이노" (.phrase)
+          </div>
+        </div>
+      </div>
     </main>
     
     <script src="js/nav.js"></script>
