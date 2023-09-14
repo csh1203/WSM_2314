@@ -8,6 +8,12 @@ var year = now.getFullYear();
 // 현재 일
 var date = now.getDate();
 
+document.getElementsByClassName('month')[0].onclick = () => {
+    year = now.getFullYear();
+    month = now.getMonth() + 1;
+    setCalendar(year, month);
+}
+
 const setCalendar = (year, month) => {
     // 제목 달 보여주자
     document.getElementsByClassName('month')[0].innerHTML = `${year}년 ${month}월`;
@@ -40,6 +46,19 @@ const setCalendar = (year, month) => {
     let firstDateDiv = datesContainerDiv.firstElementChild;
     // CSS {grid-column-start: firstDay + 1;}
     firstDateDiv.style.gridColumnStart = firstDateDay + 1;
+
+    //토 : 파랑
+    let saturdayDivs = datesContainerDiv.querySelectorAll(`.date.item:nth-child(7n + ${7 - firstDateDay})`);
+    for(let dateItem of saturdayDivs){
+        dateItem.style.color = "blue";
+    }
+
+    //일 : 빨강
+    let sundayDivs = datesContainerDiv.querySelectorAll(`.date.item:nth-child(7n + ${(7 - firstDateDay + 1) % 7})`);
+
+    for(let dateItem of sundayDivs){
+        dateItem.style.color = "red";
+    }
 } 
 setCalendar(year, month);
 
