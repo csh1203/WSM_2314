@@ -10,16 +10,18 @@ var date = now.getDate();
 
 const setCalendar = (year, month) => {
     // 제목 달 보여주자
-    document.getElementsByClassName('month')[0].innerHTML = `${month}월`;
+    document.getElementsByClassName('month')[0].innerHTML = `${year}년 ${month}월`;
+    // const datesContainerDiv = document.getElementsByClassName('dates container')[0];
+    const datesContainerDiv = document.querySelectorAll('.dates.container')[0];
     
     // 해당 월의 1일이 무슨 요일
     var firstDateDay = new Date(year, month - 1, 1).getDay();
     // 해당 월의 마지막 날짜가 며칠? : 다음 달의 1일 하루 전날 (0일)
     var lastDate = new Date(year, month, 0).getDate();
 
+    // 원래 있던 달력의 .date.item clear
+    datesContainerDiv.replaceChildren();
     //.date.item{$}*lastDate
-    // const datesContainerDiv = document.getElementsByClassName('dates container')[0];
-    const datesContainerDiv = document.querySelectorAll('.dates.container')[0];
     for(let i = 1; i<=lastDate; i++){  
         //<div class="date item">date</div>
         let dateItemDiv = document.createElement('div');
@@ -30,7 +32,7 @@ const setCalendar = (year, month) => {
     
         // HTML에 .dates.container 자식으로 넣자
         datesContainerDiv.appendChild(dateItemDiv);
-        console.log(i);        
+        // console.log(i);        
     }
 
     // 1일을 firstDateDay로 옮기자
@@ -43,16 +45,28 @@ setCalendar(year, month);
 
 // <:이전달
 // >:이후달
-document.getElementsByClassName('left')[0].addEventListener('click', () => {
-    if(month > 1){
-        now = new Date(year, month--);
-        document.getElementsByClassName('month')[0].innerHTML = `${month}월`;
+const leftDiv = document.getElementsByClassName('left')[0];
+leftDiv.onclick = () => {
+    month--;
+    if(month == 0){
+        year--;
+        month = 12;
     }
-})
+    // let thisMonthateObject= new Date(year, month - 1);
+    // yeer = thisMonthateObject.getFullYear();
+    // month = thisMonthateObject.getMonth() + 1;
+    setCalendar(year, month);
+};
 
-document.getElementsByClassName('right')[0].addEventListener('click', () => {
-    if(month < 12){
-        now = new Date(year, month++);
-        document.getElementsByClassName('month')[0].innerHTML = `${month}월`;
+const rightDiv = document.getElementsByClassName('right')[0]
+rightDiv.onclick = () => {
+    month++;
+    if(month == 13){
+        year++;
+        month = 1;
     }
-})
+    // let thisMonthateObject= new Date(year, month - 1);
+    // yeer = thisMonthateObject.getFullYear();
+    // month = thisMonthateObject.getMonth() + 1;
+    setCalendar(year, month);
+};
